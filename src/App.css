@@ -1,38 +1,84 @@
-.App {
-  text-align: center;
+#img1,#img2,#img3,#img4,#img5{
+  width: 350px;
+  height: 450px;
+  position:absolute;
+  z-index:1;
+  
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+#img1{
+    left:0px;
+    animation:mymove 4s infinite;
   }
+  
+
+#img2{
+  left:650px;
+  animation:mymove1 6s infinite;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  #img3{
+    left:900px;
+    animation:mymove2 6s infinite;
 }
 
-.App-link {
-  color: #61dafb;
+    #img4{
+        left:300px;
+        animation:mymove3 4s infinite;
+    }
+    
+    @keyframes mymove {
+        from {left:0px;}
+        to  {left:50px;}
+       }
+ 
+@keyframes mymove1 {
+ from {left:650px;}
+ to  {left:700px;}
 }
+@keyframes mymove2 {
+    from {left:900px;}
+    to  {left:1050px;}
+   }
+   @keyframes mymove3 {
+    from {left:200px;}
+    to  {left:350px;}
+   }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+   #p1,#p2,#p3{
+    position:absolute;
+    z-index:5;
+    animation:mmove 20s infinite ;
+   }
+
+   @keyframes mmove{
+   from  {left:20px;}
+   to   {left:600px;}
+   }
+  
+ 
+   #dropdown {
+    position: relative;
+    display: inline-block;
   }
-  to {
-    transform: rotate(360deg);
+  
+  #dc {
+    display: none;
+    position: absolute;
+    z-index: 1;
   }
-}
+  
+  #dc a {
+    color: black;
+    display: block;
+  }
+  
+  
+  
+  #dropdown:hover #dc {display: block;}
+  
+  
+
+
+   
+ 
+ 
