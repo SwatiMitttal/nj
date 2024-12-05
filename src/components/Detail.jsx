@@ -43,7 +43,7 @@ function Detail(){
            <h4 className=" text-xl font-semibold  flex justify-center items-center "><FaRupeeSign/>{detail.price}</h4>
            <h4 className=" text-xl font-semibold  flex justify-center items-center ">{detail.note}</h4>
 
-           <button  className="bg-slate-950  text-sm  text-white font-semibold  rounded-lg p-3 w-18 justify-center items-center" >ADD TO CART</button>
+           <button  className="bg-slate-600  text-sm  text-white font-semibold  rounded-lg p-3 w-10 justify-center items-center" >ADD TO CART</button>
            <div className="  flex justify-center items-center">
             <button onClick={handleAdd} className="bg-zinc-500  text-md font-bold rounded-lg h-10 w-10 justify-center items-center">+</button>
             <span  className='bg-zinc-100 rounded-sm  font-bold h-10 w-10'>{quantity}</span>

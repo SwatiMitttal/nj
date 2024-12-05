@@ -37,8 +37,7 @@ export const prods1=[
         id:5,
         cat:'sbags',
         imgUrl:'../../sbag/sbag2.jpeg',
-
-        price:1900,
+         price:1900,
         rating:2.5,
         slug:'sbag2'
     },
@@ -56,11 +55,19 @@ export const prods1=[
         id:7,
         cat:'bottles',
         imgUrl:'../../bottles/bot3.jpeg',
-
         price:2500,
         rating:3.5,
         slug:'bot3'
     },
+    {
+id:8,
+slug:"santa",
+price:"2499",
+cat:"toys",
+note:"Introducing our adorable Pink and White baba Santa with a Glittery Hat",
+imgurl:"../../toys/santa.jpeg",
+rating:3.8
+    }
 
 
 

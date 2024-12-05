@@ -3,16 +3,16 @@ import { createSlice } from "@reduxjs/toolkit"
 export const uslice=createSlice({
     name:"users",
     initialState:{
-        user:[],
+        user:{},
         cuser:'',
-        cexist:true
+        
 
 },
   reducers:{
     addUser(state,action){
-        const {name,email,passw,mobile,exist}=action.payload
-        const user1=state.user.filter(i=>i.email===email)
-         user1  ?  user1.exist=true  : state.user.push({name:name,email:email,passw:passw,mobile:mobile,exist:true})
+        const {name,email,passw,mobile,add1,add2,city,stat,country,pin,exist}=action.payload
+        
+         state.user=action.payload
          state.cuser=name
       return state  
 
@@ -20,7 +20,7 @@ export const uslice=createSlice({
    setU(state,action){
         const {email,name}=action.payload
         
-        state.cuser==''  ? state.cuser=name  : state.cuser='xxx'
+        state.cuser==''  ? state.cuser=email  : state.cuser='xxx'
       
    }
 

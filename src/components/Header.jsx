@@ -20,6 +20,10 @@ function Header(props){
   const handleCart=()=>{
      dispatch(toggleS)
     }
+
+    const handleC=()=>{
+
+    }
     return (
         <>
      <div className=" bg-white">
@@ -53,7 +57,20 @@ function Header(props){
 </div>    
   </div>
   </div>
-  
+     <div  id='brands' className="inline-flex" >
+     <img    src='../../brands/cross_logo.png'
+      className="h-20 w-20 rounded-md  border-2  border-amber-700 hover:scale-110"  alt='cross'
+      onClick={()=>{localStorage.setItem("scat","cross");handleC()}}
+      ></img>
+     <img    src='../../brands/hamster.png'
+      className="h-20 w-20 rounded-md  border-2  border-amber-700 hover:scale-110 "  alt='cross'
+      onClick={()=>{localStorage.setItem("scat","hamster");handleC()}}
+      ></img>
+     <img    src='../../brands/probot.jpg' 
+     className="h-20 w-20 rounded-md  border-2  border-amber-700 hover:scale-110" 
+      alt='probot'
+      ></img>
+     </div>
 
       
         </>

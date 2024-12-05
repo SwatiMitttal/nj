@@ -25,12 +25,12 @@ app.listen(port,()=>{
     console.log('App is listening',port)
 })
 
-app.get('/signup',async (req,res)=>{
-    const {email,passw}=req.body;
+app.get('/login',async (req,res)=>{
+    const {email}=req.body;
     console.log(email);
     try{
-    const user1= await User.findOne({passw:'1111'})
-    console.log(user1.email)
+    const user1= await User.findOne({email:email})
+    
     res.send(user1.email)
 }
     catch(e){
@@ -38,37 +38,49 @@ app.get('/signup',async (req,res)=>{
     }
 })
 
-app.post('/signup',cors(), async (req,res)=>{
-    const {email,passw}=req.body
-    console.log('CART EMAIL IS: ',email)
+app.post('/login',cors(), async (req,res)=>{
+    const {email}=req.body
+   try{
+    const check=await User.findOne({email:email})
+    if (check){
+        console.log('found')
+        res.status(200).json(check)}
+    else{
+       res.status(404).json('notexist')
+    }}
+ catch(e){
+    console.log(e.message)
+ } } ) 
+  
+ app.post('/signup',cors(), async (req,res)=>{
+    const {name,email,passw,mobile,add1,add2,city,stat,country,pin}=req.body
+    console.log('CART MAIL IS: ',email)
     const user1={
+        name:name,
         email:email,
-        passw,passw
+        passw,passw,
+        mobile:mobile,
+        add1:add1,
+        add2:add2,
+        city:city,
+        stat:stat,
+        country:country,
+        pin:pin
     }
  try{
-    const check=await User.findOne({email:email})
-    
-    if (check){
-        
-        res.json(202,check)}
-    else{
-       res.json('notexist')
-        await User.insertMany([user1])
+    await User.insertMany([user1])
     }
-    
- }
  catch(e){
     console.log(e.message)
  }   
-  
    
+ 
 })
 app.get('/items',async (req,res)=>{
    const {cat}=req.body
-   console.log('CATEGARY IS: ',"toys")
     try{
-    const item1= await Item.find({cat:"toys"})
-    res.send(item1)
+    const item1= await Item.find()
+    res.status(200).json(item1)
 }
     catch(e){
         console.log(e)

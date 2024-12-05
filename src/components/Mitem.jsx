@@ -11,24 +11,6 @@ function Mitem(props){
        )
   },[])
 
-  /*async function handleSubmit(e){
-
-    //e.preventDefault()
-      try{
-    await axios.post('http://localhost:4001/items/',{
-      slug
-    }).then(res=>{
-            
-         if (res.status==202){
-          
-          dispatch(setU(email,res.data.name))
-         
-         }
-    })
-    
-      }catch(err){
-        console.log(err.message)
-      }} */
  
     return(
         <>

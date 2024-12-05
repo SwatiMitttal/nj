@@ -22,7 +22,13 @@ const uSchema=mongoose.Schema({
     email:String,
     passw:String,
     mobile:String,
-    name:String
+    name:String,
+    add1:String,
+    add2:String,
+    city:String,
+    state:String,
+    country:String,
+    pin:String
 
 })
 

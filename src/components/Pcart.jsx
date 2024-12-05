@@ -2,7 +2,7 @@ import { prods1} from '../assets/prods1'
 import { Link } from 'react-router-dom'
 import { useState,useEffect } from 'react'
 import {useDispatch,useSelector}  from 'react-redux'
-import { FaRupeeSign,FaCartPlus } from 'react-icons/fa'
+import { FaRupeeSign,FaCartPlus,FaStrikethrough } from 'react-icons/fa'
 import appStore from '../store/appStore'
 import Rating from './Rating'
 import { addItem } from '../store/Cart'
@@ -12,12 +12,8 @@ function Pcart(props){
 
      const dispatch=useDispatch()
      const items=useSelector(store=>store.cart.items)
-
-    
-    async function handleAdd(){
-      
-     
-    dispatch(addItem({
+      async function handleAdd(){
+       dispatch(addItem({
             id:id,
             quantity:1
         }))
@@ -32,11 +28,16 @@ function Pcart(props){
         
          <img   src={imgUrl} alt='' className='h-80 w-70 object-cover rounded-xl object-top' ></img> 
          </Link>
-         <h3 className='flex justify-center items-center'><FaRupeeSign/>  {price}</h3>
-         <h3 className='flex justify-center items-center text-bold '> {note}
+         
+         <h3 className='flex justify-center items-center'>
+         <span className='inline-flex'>  <FaRupeeSign  /> <s>{(price+(.2*price))} </s>    </span>   
+            <FaRupeeSign/>  {price} 
+        </h3>
+            <span className='text-md font-bold text-amber-900'>20% Discount</span>
             <Rating  rating={rating} />
-         </h3>
-
+         <h3 className='flex justify-center items-center text-md font-semibold text-amber-700 '> {note}
+            </h3>
+         
          <div className='flex justify-center items-center'>
          
             <button className='text-sm text-white bg-slate-950 rounded-xl

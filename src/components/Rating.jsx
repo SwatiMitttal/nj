@@ -8,13 +8,14 @@ function Rating(props){
     }
 return(
    
-    <>
+    <><div className="inline-flex">
     {stars.map((no,i)=>(
         <FaStar  key={i}
         color={props.rating>i?colors.orange:colors.grey}
         ></FaStar>
 
     ))}
+    </div>
     </>
 )
 }
